@@ -7,8 +7,8 @@ Run XShell in Docker container
 For Ubuntu, please ensure that x11-server has been installed:
 
 ```sh
-# apt-get install x11-xserver-utils
-# xhost +
+$ sudo apt-get install x11-xserver-utils
+$ xhost +
 ```
 
 For MacOS, TBD...
@@ -16,7 +16,6 @@ For MacOS, TBD...
 ## Quick Start
 
 ```sh
-$ xhost +
 $ docker run --rm -it \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
