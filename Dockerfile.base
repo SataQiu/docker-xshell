@@ -1,0 +1,14 @@
+FROM ubuntu:20.04
+
+MAINTAINER "SataQiu <1527062125@qq.com>"
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN dpkg --add-architecture i386 && apt update && apt install wine32 -y
+
+RUN useradd -g root -m wine
+
+USER wine
+
+COPY software/Xshell4.exe /opt/XShell4.exe
+
+CMD ["wine", "/opt/XShell4.exe"]
